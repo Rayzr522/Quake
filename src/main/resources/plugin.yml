@@ -1,0 +1,10 @@
+name: Quake
+main: com.rayzr522.quake.Quake
+version: 0.1
+description: Yet another ripoff of the popular Hypixel game, "Quake"
+author: Rayzr522
+depend: [BGLib]
+commands:
+  quake:
+    description: Main Quake command
+    aliases: q
