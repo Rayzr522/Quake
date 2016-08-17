@@ -13,15 +13,23 @@ public class Quake extends MinigamePlugin {
 	public static Quake		instance;
 
 	@Override
-	public void onEnable() {
-		super.onEnable();
+	public void onPluginLoad() {
 
 		instance = this;
 
-		config = new MinigameConfig();
 		minigame = Minigame.builder(this, config).add(new BTest()).build();
 
 		commandHandler.autoSetup();
+
+	}
+
+	@Override
+	public void onPluginUnload() {
+	}
+
+	@Override
+	public void registerCommands() {
+
 		CommandBuilder.create(commandHandler).addList(PresetCommands.Setup.All).addList(PresetCommands.Game.All).build();
 
 	}
