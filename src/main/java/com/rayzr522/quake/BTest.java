@@ -10,24 +10,24 @@ import com.rayzr522.bglib.building.BEvent;
 
 public class BTest extends BEvent {
 
-	@Override
-	public void onCreate() {
-		addEvent(PlayerDropItemEvent.class);
-	}
+    @Override
+    public void onCreate() {
+        addEvent(PlayerDropItemEvent.class);
+    }
 
-	@Override
-	public void call(Event event) {
+    @Override
+    public void call(Event event) {
 
-		PlayerDropItemEvent e = (PlayerDropItemEvent) event;
+        PlayerDropItemEvent e = (PlayerDropItemEvent) event;
 
-		if (e.getItemDrop().getItemStack().getType() == Material.SULPHUR) {
+        if (e.getItemDrop().getItemStack().getType() == Material.SULPHUR) {
 
-			Item item = e.getItemDrop();
+            Item item = e.getItemDrop();
 
-			item.getWorld().createExplosion(item.getLocation(), 10f, false);
+            item.getWorld().createExplosion(item.getLocation(), 10f, false);
 
-		}
+        }
 
-	}
+    }
 
 }

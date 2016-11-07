@@ -9,29 +9,29 @@ import com.rayzr522.bglib.plugin.MinigamePlugin;
 
 public class Quake extends MinigamePlugin {
 
-	private MinigameConfig	config;
-	public static Quake		instance;
+    private MinigameConfig config;
+    public static Quake    instance;
 
-	@Override
-	public void onPluginLoad() {
+    @Override
+    public void onPluginLoad() {
 
-		instance = this;
+        instance = this;
 
-		minigame = Minigame.builder(this, config).add(new BTest()).build();
+        minigame = Minigame.builder(this, config).add(new BTest()).build();
 
-		commandHandler.autoSetup();
+        commandHandler.autoSetup();
 
-	}
+    }
 
-	@Override
-	public void onPluginUnload() {
-	}
+    @Override
+    public void onPluginUnload() {
+    }
 
-	@Override
-	public void registerCommands() {
+    @Override
+    public void registerCommands() {
 
-		CommandBuilder.create(commandHandler).addList(PresetCommands.Setup.All).addList(PresetCommands.Game.All).build();
+        CommandBuilder.create(commandHandler).addList(PresetCommands.Setup.All).addList(PresetCommands.Game.All).build();
 
-	}
+    }
 
 }
